@@ -1,0 +1,1 @@
+This is a website showing the personal portfolio. It contains simple html and styled with simple css.
