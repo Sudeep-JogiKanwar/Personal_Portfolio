@@ -13,11 +13,14 @@ body {
 
 /* Navbar */
 nav {
+  display: flex;
+  flex-wrap: wrap;
   position: fixed;
   top: 0; left: 0; right: 0;
   background: #5B6CEA;
   padding: 1em;
   text-align: center;
+  justify-content: center;
   z-index: 1000;
 }
 
@@ -55,6 +58,16 @@ ul {
 
 
 /* About me */
+@media screen and (max-width: 900px) {
+  .landing-section {
+      flex-direction: column;
+      height: auto;  /* ✅ prevents overflow on mobile */
+  }
+  .intro, .profile-card {
+      padding: 40px 20px;
+  }
+}
+
 .landing-section {
   display: flex;
   height: 100vh;
@@ -198,6 +211,13 @@ ul {
 }
 
 /* Qualifications + Publications container */
+@media screen and (max-width: 900px) {
+  .qualifications-publications-inner {
+      flex-direction: column;   /* ✅ stacks side by side columns */
+      gap: 40px;
+  }
+}
+
 .qualifications-publications {
   background: linear-gradient(rgba(17,100,102,0.8), rgba(31,40,51,0.8));  /* full-width background */
   width: 100%;                /* full width of viewport */
@@ -255,6 +275,13 @@ ul {
 }
 
 /* Experience + Test score */
+@media screen and (max-width: 900px) {
+  .experience-test-inner {
+      flex-direction: column;   /* ✅ stack on small screens */
+      gap: 40px;
+  }
+}
+
 .experience-test {
   background: linear-gradient(145deg, #5C2018 0%, #BC4639 30%, #D4A59A 60%, #F3E0DC 100%);
   background-attachment: fixed;
@@ -411,6 +438,16 @@ footer .contact-row img:hover {
 
 /* Project Section */
 /* Section Background */
+@media (max-width: 768px) {
+  .project-item {
+    grid-template-columns: 1fr; /* ✅ stack image & text */
+    gap: 30px;
+  }
+  .project-container {
+    gap: 60px; /* reduce spacing */
+  }
+}
+
 #projects {
   background: linear-gradient(145deg, #314455 0%, #644E5B 30%, #9E5A63 60%, #8E8268 100%);
   background-attachment: fixed;
